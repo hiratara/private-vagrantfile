@@ -85,7 +85,7 @@ apt-get install -y libtinfo-dev
 
 su - vagrant -c 'curl -sSL https://get.haskellstack.org/ | sh'
 su - vagrant -c 'stack setup && stack build intero'
-su - vagrant -c 'emacs --script /tmp/provision.el'
+LC_ALL=en_US.UTF-8 sudo -iu vagrant emacs --script /tmp/provision.el
 SHELL
 
 end

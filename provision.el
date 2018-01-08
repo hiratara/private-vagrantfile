@@ -4,6 +4,7 @@
 (setq package-archives '(("melpa" . "http://melpa.org/packages/")))
 
 (package-initialize)
+(package-refresh-contents)
 
 (mapcar (lambda (package)
           ; install package if not already installed
@@ -13,5 +14,5 @@
         ; list of packages to be installed
         '(open-junk-file
           intero
-	  markdown-mode
-	  markdown-mode+))
+          markdown-mode
+          markdown-mode+))
