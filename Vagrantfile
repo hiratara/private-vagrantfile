@@ -70,6 +70,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "dots/.bashrc",
                               destination: ".bashrc"
 
+  config.vm.provision "file", source: "dots/.profile",
+                              destination: ".profile"
+
   config.vm.provision "file", source: "provision.el",
                               destination: "/tmp/provision.el"
 
@@ -82,10 +85,12 @@ apt-get install -y emacs25-nox
 apt-get install -y xsel
 apt-get install -y git
 apt-get install -y libtinfo-dev
+apt-get install -y golang
 
 su - vagrant -c 'curl -sSL https://get.haskellstack.org/ | sh'
 su - vagrant -c 'stack setup && stack build intero'
-LC_ALL=en_US.UTF-8 sudo -iu vagrant emacs --script /tmp/provision.el
+sudo -iu vagrant emacs --script /tmp/provision.el
+sudo -iu vagrant go get github.com/motemen/ghq
 SHELL
 
 end
