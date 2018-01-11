@@ -86,6 +86,7 @@ apt-get install -y xsel
 apt-get install -y git
 apt-get install -y libtinfo-dev
 apt-get install -y golang
+apt-get install -y libssl-dev
 
 su - vagrant -c 'curl -sSL https://get.haskellstack.org/ | sh'
 su - vagrant -c 'stack setup && stack build intero'
