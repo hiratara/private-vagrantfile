@@ -95,6 +95,8 @@ su - vagrant -c 'curl -sSL https://get.haskellstack.org/ | sh'
 su - vagrant -c 'stack setup && stack build intero'
 sudo -iu vagrant emacs --script /tmp/provision.el
 sudo -iu vagrant go get github.com/motemen/ghq
+sudo -iu vagrant git config --global user.name "Masahiro Honma"
+sudo -iu vagrant git config --global user.email hiratara@cpan.org
 SHELL
 
 end
