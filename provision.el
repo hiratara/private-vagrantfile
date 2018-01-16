@@ -15,4 +15,5 @@
         '(open-junk-file
           intero
           markdown-mode
-          markdown-mode+))
+          markdown-mode+
+          yaml-mode))
