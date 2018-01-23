@@ -25,7 +25,14 @@
 (column-number-mode)
 (display-time)
 (show-paren-mode)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+;; (global-linum-mode t)
+;; (global-hl-line-mode t)
+;; (global-whitespace-mode 1)
+
 (server-start)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
