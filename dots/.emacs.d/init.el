@@ -27,21 +27,10 @@
 (show-paren-mode)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-;; (global-linum-mode t)
-;; (global-hl-line-mode t)
+(global-linum-mode t)
+(global-hl-line-mode t)
 ;; (global-whitespace-mode 1)
 
-(server-start)
+(load-theme 'tsdh-dark t)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (intero open-junk-file markdown-mode+))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(server-start)
