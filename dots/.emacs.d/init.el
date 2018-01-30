@@ -33,4 +33,20 @@
 
 (load-theme 'tsdh-dark t)
 
+;; helm
+(require 'helm-config)
+(helm-mode 1)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
+(define-key helm-map (kbd "C-z")  nil) ; Remove default bindings
+(define-key helm-map (kbd "C-f")  'helm-select-action) ; list actions using C-f
+
+;; projectile
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
 (server-start)

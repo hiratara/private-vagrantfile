@@ -16,4 +16,7 @@
           intero
           markdown-mode
           markdown-mode+
-          yaml-mode))
+          yaml-mode
+          projectile
+          helm
+          helm-projectile))
