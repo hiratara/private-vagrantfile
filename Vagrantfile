@@ -91,6 +91,8 @@ apt-get install -y libtinfo-dev
 apt-get install -y golang
 apt-get install -y libssl-dev
 apt-get install -y libpcre3-dev
+apt-get install -y sqlite3
+apt-get install -y libsqlite3-dev
 
 su - vagrant -c 'curl -sSL https://get.haskellstack.org/ | sh'
 su - vagrant -c 'stack setup && stack build intero'
