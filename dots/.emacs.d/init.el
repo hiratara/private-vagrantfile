@@ -27,7 +27,7 @@
 (show-paren-mode)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(global-linum-mode t)
+;; (global-linum-mode t)
 (global-hl-line-mode t)
 ;; (global-whitespace-mode 1)
 
