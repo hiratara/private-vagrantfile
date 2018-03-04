@@ -79,7 +79,7 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision "shell", inline: <<-SHELL
+  config.vm.provision "shell", inline: <<'SHELL'
 echo "Asia/Tokyo" > /etc/timezone
 dpkg-reconfigure --frontend noninteractive tzdata
 
@@ -100,6 +100,14 @@ sudo -iu vagrant emacs --script /tmp/provision.el
 sudo -iu vagrant go get github.com/motemen/ghq
 sudo -iu vagrant git config --global user.name "Masahiro Honma"
 sudo -iu vagrant git config --global user.email hiratara@cpan.org
+
+sudo -iu vagrant git clone https://github.com/tokuhirom/plenv.git /home/vagrant/.plenv
+sudo -iu vagrant echo 'export PATH="${HOME}/.plenv/bin:${PATH}"' >> /home/vagrant/.profile
+sudo -iu vagrant echo 'eval "$(plenv init -)"' >> /home/vagrant/.profile
+sudo -iu vagrant git clone https://github.com/tokuhirom/Perl-Build.git /home/vagrant/.plenv/plugins/perl-build/
+sudo -iu vagrant plenv install 5.26.1
+sudo -iu vagrant plenv global 5.26.1
+sudo -iu vagrant plenv install-cpanm
 SHELL
 
 end
